@@ -1,0 +1,18 @@
+<h1>Stories</h1>
+<p *ngIf="!stories"><em>Loading...</em></p>
+<table class='table table-striped' aria-labelledby="tableLabel" [hidden]="!stories">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let story of stories">
+      <td>{{ story.id }}</td>
+      <td>{{ story.title }}</td>
+      <td>{{ story.url }}</td>
+    </tr>
+  </tbody>
+</table>

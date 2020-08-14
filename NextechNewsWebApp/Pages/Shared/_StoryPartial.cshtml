@@ -1,0 +1,38 @@
+﻿@using NextechNewsWebApp.Core.Entities
+
+@model List<Story>
+
+<h2>Story Information</h2>
+
+@if (Model == null)
+{
+    <p class="lead">There are no stories.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Url
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var story in Model)
+            {
+                <tr>
+                    <td>
+                        @story.title
+                    </td>
+                    <td>
+                        @story.url
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
