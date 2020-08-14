@@ -10,15 +10,3 @@ C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp\NextechNewsWebApp.DAL\o
 C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp\NextechNewsWebApp.DAL\obj\Debug\netcoreapp3.1\NextechNewsWebApp.DAL.csproj.CopyComplete
 C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp\NextechNewsWebApp.DAL\obj\Debug\netcoreapp3.1\NextechNewsWebApp.DAL.dll
 C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp\NextechNewsWebApp.DAL\obj\Debug\netcoreapp3.1\NextechNewsWebApp.DAL.pdb
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.DAL\bin\Debug\netcoreapp3.1\NextechNewsWebApp.DAL.deps.json
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.DAL\bin\Debug\netcoreapp3.1\NextechNewsWebApp.DAL.dll
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.DAL\bin\Debug\netcoreapp3.1\NextechNewsWebApp.DAL.pdb
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.DAL\bin\Debug\netcoreapp3.1\NextechNewsWebApp.Core.dll
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.DAL\bin\Debug\netcoreapp3.1\NextechNewsWebApp.Core.pdb
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.DAL\obj\Debug\netcoreapp3.1\NextechNewsWebApp.DAL.csprojAssemblyReference.cache
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.DAL\obj\Debug\netcoreapp3.1\NextechNewsWebApp.DAL.AssemblyInfoInputs.cache
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.DAL\obj\Debug\netcoreapp3.1\NextechNewsWebApp.DAL.AssemblyInfo.cs
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.DAL\obj\Debug\netcoreapp3.1\NextechNewsWebApp.DAL.csproj.CoreCompileInputs.cache
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.DAL\obj\Debug\netcoreapp3.1\NextechNewsWebApp.DAL.csproj.CopyComplete
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.DAL\obj\Debug\netcoreapp3.1\NextechNewsWebApp.DAL.dll
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.DAL\obj\Debug\netcoreapp3.1\NextechNewsWebApp.DAL.pdb

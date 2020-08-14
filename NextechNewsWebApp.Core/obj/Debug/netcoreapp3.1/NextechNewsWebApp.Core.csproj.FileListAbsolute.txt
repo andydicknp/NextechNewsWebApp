@@ -6,11 +6,3 @@ C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp\NextechNewsWebApp.Core\
 C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp\NextechNewsWebApp.Core\obj\Debug\netcoreapp3.1\NextechNewsWebApp.Core.csproj.CoreCompileInputs.cache
 C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp\NextechNewsWebApp.Core\obj\Debug\netcoreapp3.1\NextechNewsWebApp.Core.dll
 C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp\NextechNewsWebApp.Core\obj\Debug\netcoreapp3.1\NextechNewsWebApp.Core.pdb
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.Core\bin\Debug\netcoreapp3.1\NextechNewsWebApp.Core.deps.json
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.Core\bin\Debug\netcoreapp3.1\NextechNewsWebApp.Core.dll
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.Core\bin\Debug\netcoreapp3.1\NextechNewsWebApp.Core.pdb
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.Core\obj\Debug\netcoreapp3.1\NextechNewsWebApp.Core.AssemblyInfoInputs.cache
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.Core\obj\Debug\netcoreapp3.1\NextechNewsWebApp.Core.AssemblyInfo.cs
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.Core\obj\Debug\netcoreapp3.1\NextechNewsWebApp.Core.csproj.CoreCompileInputs.cache
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.Core\obj\Debug\netcoreapp3.1\NextechNewsWebApp.Core.dll
-C:\personal\projects\NextechNewsWebApp\NextechNewsWebApp.Core\obj\Debug\netcoreapp3.1\NextechNewsWebApp.Core.pdb
