@@ -24,7 +24,6 @@ namespace NextechNewsWebApp.Angular.Controllers
             _storyRepository = storyRepository;
         }
       
-        // GET: api/<StoryController>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Story>>> GetStories()
         {
