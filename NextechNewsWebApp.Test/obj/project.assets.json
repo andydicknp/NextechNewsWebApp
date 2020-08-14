@@ -5523,11 +5523,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.Test\\NextechNewsWebApp.Test.csproj",
+      "projectUniqueName": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Test\\NextechNewsWebApp.Test.csproj",
       "projectName": "NextechNewsWebApp.Test",
-      "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.Test\\NextechNewsWebApp.Test.csproj",
+      "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Test\\NextechNewsWebApp.Test.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.Test\\obj\\",
+      "outputPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5543,8 +5543,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.DAL\\NextechNewsWebApp.DAL.csproj": {
-              "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.DAL\\NextechNewsWebApp.DAL.csproj"
+            "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.DAL\\NextechNewsWebApp.DAL.csproj": {
+              "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.DAL\\NextechNewsWebApp.DAL.csproj"
             }
           }
         }

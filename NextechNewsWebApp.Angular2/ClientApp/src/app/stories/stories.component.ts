@@ -1,5 +1,6 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
 import { Story } from './story';
 
 @Component({
@@ -8,7 +9,10 @@ import { Story } from './story';
     styleUrls: ['./stories.component.css']
 })
 /** stories component*/
-export class StoriesComponent {
+export class StoriesComponent implements OnDestroy, OnInit {
+
+  public dtOptions: DataTables.Settings = {};
+  public dtTrigger: Subject<Story[]> = new Subject();
   public stories: Story[];
 
   constructor(
@@ -17,9 +21,18 @@ export class StoriesComponent {
   }
 
   ngOnInit() {
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 10
+    };
     this.http.get<Story[]>(this._baseUrl + 'api/Story')
       .subscribe(result => {
         this.stories = result;
+        this.dtTrigger.next();
       }, error => console.error(error));
+  }
+
+  ngOnDestroy(): void {
+    this.dtTrigger.unsubscribe();
   }
 }

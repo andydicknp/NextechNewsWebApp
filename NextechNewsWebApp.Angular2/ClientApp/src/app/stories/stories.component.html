@@ -1,6 +1,6 @@
 <h1>Stories</h1>
 <p *ngIf="!stories"><em>Loading...</em></p>
-<table class='table table-striped' aria-labelledby="tableLabel" [hidden]="!stories">
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
   <thead>
     <tr>
       <th>ID</th>

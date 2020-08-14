@@ -32,7 +32,7 @@ namespace NextechNewsWebApp.Angular.Controllers
 
             List<int> allStories = await _storyRepository.GetNewStoriesAsync();
             
-            foreach (var storyId in allStories.GetRange(0, 10))
+            foreach (var storyId in allStories)
             {
                 var story = await _storyRepository.GetByIdAsync(storyId);
 
