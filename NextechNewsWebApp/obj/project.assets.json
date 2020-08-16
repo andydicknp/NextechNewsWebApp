@@ -148,11 +148,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.csproj",
+      "projectUniqueName": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.csproj",
       "projectName": "NextechNewsWebApp",
-      "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.csproj",
+      "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp\\obj\\",
+      "outputPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -168,11 +168,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.Core\\NextechNewsWebApp.Core.csproj": {
-              "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.Core\\NextechNewsWebApp.Core.csproj"
+            "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Core\\NextechNewsWebApp.Core.csproj": {
+              "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Core\\NextechNewsWebApp.Core.csproj"
             },
-            "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.DAL\\NextechNewsWebApp.DAL.csproj": {
-              "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.DAL\\NextechNewsWebApp.DAL.csproj"
+            "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.DAL\\NextechNewsWebApp.DAL.csproj": {
+              "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.DAL\\NextechNewsWebApp.DAL.csproj"
             }
           }
         }

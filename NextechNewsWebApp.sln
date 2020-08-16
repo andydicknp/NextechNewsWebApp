@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NextechNewsWebApp", "NextechNewsWebApp\NextechNewsWebApp.csproj", "{7F810EE4-C742-41A7-BF49-7CD28050DFAB}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NextechNewsWebApp.Core", "NextechNewsWebApp.Core\NextechNewsWebApp.Core.csproj", "{8598DAED-2D93-46A1-AB16-4C56CB88134D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NextechNewsWebApp.DAL", "NextechNewsWebApp.DAL\NextechNewsWebApp.DAL.csproj", "{069D21D3-8D59-4645-8267-AF17A0311F18}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NextechNewsWebApp.Test", "NextechNewsWebApp.Test\NextechNewsWebApp.Test.csproj", "{886D8264-691A-4656-9CDC-DB5A4BB8BFB1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NextechNewsWebApp.Angular2", "NextechNewsWebApp.Angular2\NextechNewsWebApp.Angular2.csproj", "{5D8A5430-DA26-41D0-95CE-CA92699269C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NextechNewsWebApp.Angular", "NextechNewsWebApp.Angular\NextechNewsWebApp.Angular.csproj", "{39A126BF-C86D-4B3F-AC15-9F045849BA93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7F810EE4-C742-41A7-BF49-7CD28050DFAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F810EE4-C742-41A7-BF49-7CD28050DFAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F810EE4-C742-41A7-BF49-7CD28050DFAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F810EE4-C742-41A7-BF49-7CD28050DFAB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8598DAED-2D93-46A1-AB16-4C56CB88134D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8598DAED-2D93-46A1-AB16-4C56CB88134D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8598DAED-2D93-46A1-AB16-4C56CB88134D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,10 +29,10 @@ Global
 		{886D8264-691A-4656-9CDC-DB5A4BB8BFB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{886D8264-691A-4656-9CDC-DB5A4BB8BFB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{886D8264-691A-4656-9CDC-DB5A4BB8BFB1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D8A5430-DA26-41D0-95CE-CA92699269C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5D8A5430-DA26-41D0-95CE-CA92699269C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5D8A5430-DA26-41D0-95CE-CA92699269C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5D8A5430-DA26-41D0-95CE-CA92699269C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39A126BF-C86D-4B3F-AC15-9F045849BA93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39A126BF-C86D-4B3F-AC15-9F045849BA93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39A126BF-C86D-4B3F-AC15-9F045849BA93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39A126BF-C86D-4B3F-AC15-9F045849BA93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

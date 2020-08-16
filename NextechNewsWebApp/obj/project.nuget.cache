@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eAqkR8YsNASEXS1MHIuVjFv/lZ+Zq6/ieHNSTF5vTSNkYaOQ2hdLwad+cmYr0Fm0XtH9dwHVZioR+T8RO6bGFQ==",
+  "dgSpecHash": "4i1HTcPtCKmoB/vOOzmRjcBNxS9dAAzGUPldlcVCUf0RU8aagHtQJphi8k5Tgfe40xBmF3bEkYcoEC0so/icug==",
   "success": true,
-  "projectFilePath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.csproj",
+  "projectFilePath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp\\NextechNewsWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.7\\microsoft.extensions.dependencyinjection.3.1.7.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.7\\microsoft.extensions.dependencyinjection.abstractions.3.1.7.nupkg.sha512",
