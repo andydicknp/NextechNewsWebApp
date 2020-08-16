@@ -20,6 +20,8 @@ namespace NextechNewsWebApp.Angular.Controllers
         private readonly ILogger<StoryController> _logger;
         private readonly IStoryRepository _storyRepository;
 
+        private static Dictionary<int, Story> cachedIds = new Dictionary<int, Story>();
+
         public StoryController(ILogger<StoryController> logger, IStoryRepository storyRepository)
         {
             _logger = logger;
@@ -27,43 +29,90 @@ namespace NextechNewsWebApp.Angular.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<StoryTableResult>> GetStories(string pageIndex, string pageSize, string filter)
+        public async Task<ActionResult<StoryTableResult>> GetStories(string pageIndex, string pageSize)
         {
             int _pageIndex = !String.IsNullOrEmpty(pageIndex) ? int.Parse(pageIndex) : 0;
             int _pageSize = !String.IsNullOrEmpty(pageSize) ? int.Parse(pageSize) : 0;
 
-            List <Story> stories = new List<Story>();
-            List<int> allStoriesIds = await _storyRepository.GetNewStoriesAsync();
+            List<Story> stories = cachedIds.Select(i => i.Value).ToList<Story>();
 
-            var allStories = new ConcurrentBag<Story>();
-            var semaphore = new SemaphoreSlim(20);
-            var taskRequests = allStoriesIds.GetRange( ( _pageIndex * _pageSize ), _pageSize).Select(async item =>
-            {
-                try
-                {
-                    await semaphore.WaitAsync();
-                    var story = await _storyRepository.GetByIdAsync(item);
-                    if( story != null && (
-                        ( !String.IsNullOrEmpty(story.url) &&  
-                          !String.IsNullOrEmpty(filter) && 
-                          story.title.ToLower().Contains(filter) )  || 
-                        (!String.IsNullOrEmpty(story.url) && String.IsNullOrEmpty(filter)) )  
-                      )
-                    {
-                        allStories.Add(story);
-                    }                    
-                }
-                finally
-                {
-                    semaphore.Release();
-                }
-            });
-            await Task.WhenAll(taskRequests);
+            int fromIndex = (_pageIndex * _pageSize);
+            int count = _pageSize > stories.Count ? stories.Count : _pageSize;
 
-            StoryTableResult result = new StoryTableResult(allStories.ToList<Story>(),
+            StoryTableResult result = new StoryTableResult(stories.GetRange(fromIndex, count),
                                               _pageIndex,
                                               _pageSize,
-                                              !String.IsNullOrEmpty(filter) ? allStories.Count : allStoriesIds.Count);
+                                              cachedIds.Count);
+            return result;
+        }
+
+        [HttpGet]
+        [Route("GetFilteredStories")]
+        public async Task<ActionResult<StoryTableResult>> GetFilteredStories([FromQuery] string filter)
+        {
+            int _pageIndex = 0;
+            int _pageSize = 10;
+            
+            List<Story> stories = new List<Story>();
+
+            List<int> storiesIds = !String.IsNullOrEmpty(filter) ? 
+                                    new List<int>(cachedIds.Keys) : 
+                                    await _storyRepository.GetNewStoriesAsync();
+
+
+            
+            if (!String.IsNullOrEmpty(filter))
+            {
+                stories = cachedIds.Where( x => !String.IsNullOrEmpty(x.Value.url) && 
+                                                x.Value.title.ToLower().Contains(filter) ).Select(i => i.Value)
+                                    .ToList<Story>();
+            }
+            else
+            {
+                var semaphore = new SemaphoreSlim(20);
+                var searchedStories = new ConcurrentDictionary<int, Story>();
+                var taskRequests = storiesIds.Select(async item =>
+                {
+                    try
+                    {
+                        await semaphore.WaitAsync();
+                        var story = await _storyRepository.GetByIdAsync(item);
+                        if (story != null)
+                        {
+                            if (!String.IsNullOrEmpty(filter))
+                            {
+                                if (!String.IsNullOrEmpty(story.url) &&
+                                      story.title.ToLower().Contains(filter))
+                                {
+                                    searchedStories.TryAdd(story.id, story);
+                                }
+                            }
+                            else
+                            {
+                                searchedStories.TryAdd(story.id, story);
+                            }
+                        }
+                    }
+                    finally
+                    {
+                        semaphore.Release();
+                    }
+                });
+
+                await Task.WhenAll(taskRequests);
+
+                stories = searchedStories.OrderByDescending(i => i.Key).Select(i => i.Value).ToList<Story>();
+                
+                cachedIds = searchedStories.OrderByDescending(i => i.Key).ToDictionary(x => x.Key, x => x.Value);
+            }
+
+            int fromIndex = (_pageIndex * _pageSize);
+            int count = _pageSize > stories.Count ? stories.Count : _pageSize;
+
+            StoryTableResult result = new StoryTableResult(stories.GetRange(fromIndex, count),
+                                              _pageIndex,
+                                              _pageSize,
+                                              !String.IsNullOrEmpty(filter) ? stories.Count : cachedIds.Count);
             return result;
         }
     }
