@@ -8,11 +8,12 @@ namespace NextechNewsWebApp.Test.IntegrationTests.FakeService
 {
     public class FakeCachedData : ICachedData
     {
-        private Dictionary<int, Story> _cachedData;
+        public Dictionary<int, Story> cachedData { get; set; }
+        public Dictionary<int, Story> cachedShowingData { get; set; }
 
         public FakeCachedData()
         {
-            _cachedData = new Dictionary<int, Story>(
+            cachedData = new Dictionary<int, Story>(
                 new List<KeyValuePair<int, Story>>()
                 {
                     new KeyValuePair<int, Story>( 1, new Story(1, "Title 1", "www.url1.com/story1")),
@@ -20,13 +21,15 @@ namespace NextechNewsWebApp.Test.IntegrationTests.FakeService
                     new KeyValuePair<int, Story>( 3, new Story(1, "Title 3", "www.url1.com/story3"))
                 }
             );
-        }
 
-        public Dictionary<int, Story> cachedData
-        {
-            get { return _cachedData; }
-
-            set { _cachedData = value; }
+            cachedShowingData = new Dictionary<int, Story>(
+                new List<KeyValuePair<int, Story>>()
+                {
+                    new KeyValuePair<int, Story>( 1, new Story(1, "Title 1", "www.url1.com/story1")),
+                    new KeyValuePair<int, Story>( 2, new Story(1, "Title 2", "www.url1.com/story2")),
+                    new KeyValuePair<int, Story>( 3, new Story(1, "Title 3", "www.url1.com/story3"))
+                }
+            );
         }
     }
 }

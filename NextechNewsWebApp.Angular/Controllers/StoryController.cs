@@ -33,7 +33,7 @@ namespace NextechNewsWebApp.Angular.Controllers
             int _pageIndex = !String.IsNullOrEmpty(pageIndex) ? int.Parse(pageIndex) : 0;
             int _pageSize = !String.IsNullOrEmpty(pageSize) ? int.Parse(pageSize) : 0;
 
-            List<Story> stories = _serviceCachedData.cachedData.Select(i => i.Value).ToList<Story>();
+            List<Story> stories = _serviceCachedData.cachedShowingData.Select(i => i.Value).ToList<Story>();
 
             int fromIndex = (_pageIndex * _pageSize);
             int count = _pageSize > stories.Count ? stories.Count : _pageSize;
@@ -41,7 +41,7 @@ namespace NextechNewsWebApp.Angular.Controllers
             StoryTableResult result = new StoryTableResult(stories.GetRange(fromIndex, count),
                                               _pageIndex,
                                               _pageSize,
-                                              _serviceCachedData.cachedData.Count);
+                                              _serviceCachedData.cachedShowingData.Count);
             return result;
         }
 
@@ -62,9 +62,10 @@ namespace NextechNewsWebApp.Angular.Controllers
             
             if (!String.IsNullOrEmpty(filter))
             {
-                stories = _serviceCachedData.cachedData.Where( x => !String.IsNullOrEmpty(x.Value.url) && 
-                                                x.Value.title.ToLower().Contains(filter) ).Select(i => i.Value)
-                                    .ToList<Story>();
+                _serviceCachedData.cachedShowingData = new Dictionary<int, Story>(_serviceCachedData.cachedData.Where(x => !String.IsNullOrEmpty(x.Value.url) &&
+                                               x.Value.title.ToLower().Contains(filter)).Select(i => i));
+
+                stories = _serviceCachedData.cachedShowingData.Select(i => i.Value).ToList<Story>();
             }
             else
             {
@@ -103,6 +104,8 @@ namespace NextechNewsWebApp.Angular.Controllers
                 stories = searchedStories.OrderByDescending(i => i.Key).Select(i => i.Value).ToList<Story>();
 
                 _serviceCachedData.cachedData = searchedStories.OrderByDescending(i => i.Key).ToDictionary(x => x.Key, x => x.Value);
+
+                _serviceCachedData.cachedShowingData = _serviceCachedData.cachedData;
             }
 
             int fromIndex = (_pageIndex * _pageSize);

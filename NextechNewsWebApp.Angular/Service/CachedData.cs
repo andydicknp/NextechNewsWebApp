@@ -8,13 +8,8 @@ namespace NextechNewsWebApp.Angular.Service
 {
     public class CachedData : ICachedData
     {
-        private Dictionary<int, Story> _cachedData = new Dictionary<int, Story>();
-
-        public Dictionary<int, Story> cachedData
-        {
-            get { return _cachedData; }
-
-            set { _cachedData = value; }
-        }
+        public Dictionary<int, Story> cachedData { get; set; }
+        
+        public Dictionary<int, Story> cachedShowingData { get; set; }
     }
 }
