@@ -4,6 +4,74 @@
     "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Test\\NextechNewsWebApp.Test.csproj": {}
   },
   "projects": {
+    "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Angular\\NextechNewsWebApp.Angular.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Angular\\NextechNewsWebApp.Angular.csproj",
+        "projectName": "NextechNewsWebApp.Angular",
+        "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Angular\\NextechNewsWebApp.Angular.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Angular\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Core\\NextechNewsWebApp.Core.csproj": {
+                "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Core\\NextechNewsWebApp.Core.csproj"
+              },
+              "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.DAL\\NextechNewsWebApp.DAL.csproj": {
+                "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.DAL\\NextechNewsWebApp.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.SpaServices.Extensions": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Core\\NextechNewsWebApp.Core.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -145,6 +213,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Angular\\NextechNewsWebApp.Angular.csproj": {
+                "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.Angular\\NextechNewsWebApp.Angular.csproj"
+              },
               "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.DAL\\NextechNewsWebApp.DAL.csproj": {
                 "projectPath": "C:\\personal\\projects\\NextechNewsWebApp\\NextechNewsWebApp.DAL\\NextechNewsWebApp.DAL.csproj"
               }
@@ -172,6 +243,10 @@
               "target": "Package",
               "version": "[16.5.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
             "coverlet.collector": {
               "target": "Package",
               "version": "[1.2.0, )"
@@ -188,6 +263,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using NextechNewsWebApp.Angular.Service;
 using NextechNewsWebApp.Core.Entities;
 using NextechNewsWebApp.Core.Interfaces;
 
@@ -17,15 +18,13 @@ namespace NextechNewsWebApp.Angular.Controllers
     [ApiController]
     public class StoryController : ControllerBase
     {
-        private readonly ILogger<StoryController> _logger;
         private readonly IStoryRepository _storyRepository;
+        private ICachedData _serviceCachedData;
 
-        private static Dictionary<int, Story> cachedIds = new Dictionary<int, Story>();
-
-        public StoryController(ILogger<StoryController> logger, IStoryRepository storyRepository)
+        public StoryController(IStoryRepository storyRepository, ICachedData serviceCachedData)
         {
-            _logger = logger;
             _storyRepository = storyRepository;
+            _serviceCachedData = serviceCachedData;
         }
 
         [HttpGet]
@@ -34,7 +33,7 @@ namespace NextechNewsWebApp.Angular.Controllers
             int _pageIndex = !String.IsNullOrEmpty(pageIndex) ? int.Parse(pageIndex) : 0;
             int _pageSize = !String.IsNullOrEmpty(pageSize) ? int.Parse(pageSize) : 0;
 
-            List<Story> stories = cachedIds.Select(i => i.Value).ToList<Story>();
+            List<Story> stories = _serviceCachedData.cachedData.Select(i => i.Value).ToList<Story>();
 
             int fromIndex = (_pageIndex * _pageSize);
             int count = _pageSize > stories.Count ? stories.Count : _pageSize;
@@ -42,7 +41,7 @@ namespace NextechNewsWebApp.Angular.Controllers
             StoryTableResult result = new StoryTableResult(stories.GetRange(fromIndex, count),
                                               _pageIndex,
                                               _pageSize,
-                                              cachedIds.Count);
+                                              _serviceCachedData.cachedData.Count);
             return result;
         }
 
@@ -56,14 +55,14 @@ namespace NextechNewsWebApp.Angular.Controllers
             List<Story> stories = new List<Story>();
 
             List<int> storiesIds = !String.IsNullOrEmpty(filter) ? 
-                                    new List<int>(cachedIds.Keys) : 
+                                    new List<int>(_serviceCachedData.cachedData.Keys) : 
                                     await _storyRepository.GetNewStoriesAsync();
 
 
             
             if (!String.IsNullOrEmpty(filter))
             {
-                stories = cachedIds.Where( x => !String.IsNullOrEmpty(x.Value.url) && 
+                stories = _serviceCachedData.cachedData.Where( x => !String.IsNullOrEmpty(x.Value.url) && 
                                                 x.Value.title.ToLower().Contains(filter) ).Select(i => i.Value)
                                     .ToList<Story>();
             }
@@ -102,8 +101,8 @@ namespace NextechNewsWebApp.Angular.Controllers
                 await Task.WhenAll(taskRequests);
 
                 stories = searchedStories.OrderByDescending(i => i.Key).Select(i => i.Value).ToList<Story>();
-                
-                cachedIds = searchedStories.OrderByDescending(i => i.Key).ToDictionary(x => x.Key, x => x.Value);
+
+                _serviceCachedData.cachedData = searchedStories.OrderByDescending(i => i.Key).ToDictionary(x => x.Key, x => x.Value);
             }
 
             int fromIndex = (_pageIndex * _pageSize);
@@ -112,7 +111,7 @@ namespace NextechNewsWebApp.Angular.Controllers
             StoryTableResult result = new StoryTableResult(stories.GetRange(fromIndex, count),
                                               _pageIndex,
                                               _pageSize,
-                                              !String.IsNullOrEmpty(filter) ? stories.Count : cachedIds.Count);
+                                              !String.IsNullOrEmpty(filter) ? stories.Count : _serviceCachedData.cachedData.Count);
             return result;
         }
     }

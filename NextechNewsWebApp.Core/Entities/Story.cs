@@ -35,5 +35,14 @@ namespace NextechNewsWebApp.Core.Entities
         public int[] parts { get; set; }
 
         public int descendants { get; set; }
+
+        public Story() { }
+
+        public Story(int _id, string _title, string _url)
+        {
+            id = _id;
+            title = _title;
+            url = _url;
+        }
     }
 }

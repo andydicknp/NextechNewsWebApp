@@ -8,6 +8,11 @@ namespace NextechNewsWebApp.Angular.Controllers
 {
     public class StoryTableResult
     {
+        public StoryTableResult()
+        {
+
+        }
+
         public StoryTableResult(List<Story> data, int pageIndex, int pageSize, int count)
         {
             this.Data = data;
